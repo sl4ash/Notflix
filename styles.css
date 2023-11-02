@@ -1,0 +1,399 @@
+body {
+  width: 100vw;
+  max-width: 100%;
+  font-family: "Poppins", sans-serif;
+  background-color: black;
+  color: white;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 1em;
+  background-color: black;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(0, 219, 88);
+  border-radius: 24px;
+  border: 0.3em solid black;
+  box-shadow: inset 0 0 4px 1px rgba(0, 0, 0, 0.5);
+}
+::-webkit-scrollbar-thumb:hover {
+  box-shadow: inset 0 0 4px 1px rgba(50, 50, 50, 0.4);
+}
+::-webkit-scrollbar-thumb:active {
+  box-shadow: none;
+}
+
+::-webkit-scrollbar-track {
+  background-color: black;
+  border-radius: 24px;
+}
+
+.shown {
+  visibility: visible !important;
+}
+
+.topbar {
+  background: linear-gradient(180deg, rgb(0, 0, 0) 90%, rgba(0, 0, 0, 0) 100%);
+  padding: 2em 2em 2em;
+  display: flex;
+  justify-content: center;
+  height: 1vh;
+  z-index: 10000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: top 0.3s ease-in-out;
+}
+.topbar .logo {
+  width: 10%;
+  align-self: center;
+}
+.topbar .logo img {
+  width: 100%;
+}
+
+.topbar-down {
+  top: -64px;
+}
+
+.navbar {
+  width: 30%;
+  justify-content: space-between;
+  display: flex;
+  align-self: center;
+  margin-left: 5%;
+}
+
+.navbar-item {
+  position: relative;
+  cursor: pointer;
+  padding: 5px 10px;
+  color: white;
+}
+.navbar-item h2 {
+  transition: all 0.5s ease;
+  border-bottom: 1px solid rgba(0, 219, 88, 0);
+}
+
+.navbar-item:hover > h2 {
+  border-bottom: 1px solid rgb(0, 219, 88);
+}
+
+.attribution {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.attribution-container {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.attribution-container img {
+  width: 100%;
+}
+
+.highlight {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+  height: 80vh;
+  padding: 5% 5%;
+}
+
+.highlight-backdrop {
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.highlight-backdrop::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 50%, rgb(0, 0, 0) 100%);
+}
+.highlight-backdrop > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.highlight-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2em 0;
+}
+.highlight-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+.highlight-wrapper .highlight-exclusive {
+  display: flex;
+  align-items: center;
+}
+.highlight-wrapper .highlight-exclusive > img {
+  height: 3em;
+}
+.highlight-wrapper .highlight-exclusive > h2 {
+  font-family: "Gabarito", cursive;
+  margin-left: 0.25em;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+  font-size: 2em;
+  color: rgb(0, 219, 88);
+}
+.highlight-wrapper > .highlight-movie__title {
+  width: 50%;
+  transform: translateX(-6px);
+}
+.highlight-wrapper > .highlight-movie__title > h2 {
+  font-size: 6em;
+  font-family: "Gabarito", cursive;
+  font-weight: 700;
+}
+.highlight-wrapper > .highlight-buttons {
+  display: flex;
+  gap: 2em;
+  width: 50%;
+  margin-bottom: 1em;
+  z-index: 5;
+}
+.highlight-wrapper > .highlight-buttons > div {
+  cursor: pointer;
+  display: flex;
+  gap: 1em;
+  padding: 1em 2em;
+  background: rgba(0, 0, 0, 0.8);
+  transition: all 0.3s ease;
+  font-weight: 500;
+  border-radius: 2px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.7);
+}
+.highlight-wrapper > .highlight-buttons > div:hover {
+  background: rgba(25, 25, 25, 0.75);
+}
+.highlight-wrapper > .highlight-description {
+  width: 60%;
+}
+.highlight-wrapper > .highlight-description > h2 {
+  font-size: 1.5em;
+  font-weight: 300;
+}
+
+.movie-list {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-list-category {
+  font-size: 3em;
+  font-weight: 600;
+  margin-bottom: 0.5em;
+  color: rgb(0, 219, 88);
+}
+
+.movie-wheel-wrapper {
+  position: relative;
+  height: 15em;
+  overflow: visible;
+  display: flex;
+}
+
+.movie-wheel {
+  left: -5em;
+  position: absolute;
+  overflow: hidden;
+  display: flex;
+  gap: 1em;
+  transition: left 0.5s ease-in-out;
+  user-select: none;
+}
+
+.movie-wheel-wrapper > span.arrow {
+  display: block;
+  width: 2em;
+  height: 2em;
+  position: relative;
+  align-self: center;
+  cursor: pointer;
+  z-index: 99;
+}
+.movie-wheel-wrapper > span.arrow i {
+  transition: all 0.2s ease-in-out;
+  top: 50%;
+  position: absolute;
+  color: rgb(0, 219, 88);
+}
+.movie-wheel-wrapper > span.arrow i::before {
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0 0 4px 2px rgb(0, 219, 88);
+  border-radius: 100px;
+}
+.movie-wheel-wrapper > span.arrow:hover > i {
+  color: #108234;
+}
+.movie-wheel-wrapper > span.arrow:hover > i::before {
+  box-shadow: 0 0 4px 2px #108234;
+}
+
+.movie-wheel-wrapper > span.arrow.left {
+  left: 0;
+}
+
+.movie-wheel-wrapper > span.arrow.right {
+  left: calc(100% - 64px);
+}
+
+.movie-wheel-movie .image-wrapper {
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.movie-wheel-movie .image-wrapper > img {
+  height: 15em;
+  border-radius: 2px;
+}
+.movie-wheel-movie .image-wrapper:hover::before {
+  opacity: 1;
+}
+
+.image-wrapper::before {
+  content: "";
+  position: absolute;
+  height: 15em;
+  width: 10em;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.movie-wheel-movie-context-menu {
+  border: 2px solid #108234;
+  width: 30em;
+  height: 16.875em;
+  padding: 1em;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-size: cover;
+  background-position: center;
+  display: none;
+  flex-direction: column;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 4;
+  border-radius: 4px;
+  opacity: 0;
+  overflow: auto;
+}
+.movie-wheel-movie-context-menu::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-1em -1em);
+  height: 100%;
+  width: 100%;
+  content: "";
+  z-index: 5;
+}
+.movie-wheel-movie-context-menu .context-menu-backdrop {
+  position: relative;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)) no-repeat;
+}
+.movie-wheel-movie-context-menu .context-menu-backdrop > .backdrop-img {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-1em, -1em);
+  width: calc(30em - 4px);
+  height: calc(16.875em - 4px);
+  object-fit: cover;
+  border-radius: 2px;
+}
+.movie-wheel-movie-context-menu .context-menu-backdrop::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-1em, -1em);
+  width: calc(30em - 4px);
+  height: calc(16.875em - 4px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)) no-repeat;
+}
+.movie-wheel-movie-context-menu .context-menu-title {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.movie-wheel-movie-context-menu .context-menu-title > h2 {
+  font-family: "Gabarito", cursive;
+  font-weight: 700;
+  font-size: 2.5em;
+  text-align: center;
+}
+.movie-wheel-movie-context-menu .context-menu-title > h3 {
+  border: 2px solid lightgrey;
+  padding: 2px;
+}
+.movie-wheel-movie-context-menu .context-menu-title > .rating {
+  display: flex;
+  gap: 0.16em;
+}
+.movie-wheel-movie-context-menu .context-menu-title > .rating i {
+  transform: translateY(-1px);
+}
+.movie-wheel-movie-context-menu .context-menu-description {
+  margin-top: auto;
+}
+.movie-wheel-movie-context-menu .buttons {
+  z-index: 5;
+  margin-top: auto;
+  display: flex;
+  gap: 2em;
+  align-items: center;
+}
+.movie-wheel-movie-context-menu .buttons div {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  cursor: pointer;
+  padding: 1em 2em;
+  background: rgba(0, 0, 0, 0.75);
+  transition: all 0.3s ease;
+  border-radius: 2px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.7);
+}
+.movie-wheel-movie-context-menu .buttons div:hover {
+  background: rgba(25, 25, 25, 0.75);
+}
