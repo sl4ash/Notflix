@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://meyerweb.com/eric/tools/css/reset/reset.css"
+    />
+    <link rel="shortcut icon" href="./images/logo.svg" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800;900&family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+    <title>NOTFLIX</title>
+  </head>
+  <body>
+    <main>
+      <section class="topbar">
+        <div class="logo">
+          <img src="./images/notflix-logo.webp" />
+        </div>
+        <div class="navbar">
+          <div class="navbar-item">
+            <h2>Home</h2>
+          </div>
+          <div class="navbar-item">
+            <h2>Movies</h2>
+          </div>
+          <div class="navbar-item">
+            <h2>Shows</h2>
+          </div>
+          <div class="navbar-item">
+            <h2>Favorites</h2>
+          </div>
+        </div>
+        <div class="attribution">
+          <a
+            class="attribution-container"
+            href="https://www.themoviedb.org"
+            target="_blank"
+          >
+            <h2>Powered by:</h2>
+            <img src="./images/tmdb logo.svg" />
+          </a>
+        </div>
+      </section>
+      <section class="highlight">
+        <span class="highlight-backdrop">
+          <img
+            src="https://image.tmdb.org/t/p/original/bs49Ar9xjIUQQNYytxzp10xYLqQ.jpg"
+          />
+        </span>
+        <div class="highlight-wrapper">
+          <div class="highlight-exclusive">
+            <img src="./images/notflix-n.webp" />
+            <h2>HIGHLIGHT</h2>
+          </div>
+          <div class="highlight-movie__title">
+            <h2>FIGHT CLUB</h2>
+          </div>
+          <div class="highlight-buttons">
+            <div>
+              <i class="fa-solid fa-book-open"></i>
+              <h2>Read More</h2>
+            </div>
+            <div>
+              <i class="fa-solid fa-plus"></i>
+              <h2>Add to Favorites</h2>
+            </div>
+          </div>
+          <div class="highlight-description">
+            <h2>
+              A ticking-time-bomb insomniac and a slippery soap salesman channel
+              primal male aggression into a shocking new form of therapy.
+            </h2>
+          </div>
+        </div>
+      </section>
+      <section class="movie-list popular">
+        <div>
+          <h2 class="movie-list-category">Popular Now</h2>
+        </div>
+        <div class="movie-wheel-wrapper">
+          <span class="arrow left">
+            <i class="fa fa-circle-chevron-left fa-2xl" id="leftArrow"></i>
+          </span>
+          <span class="arrow right">
+            <i class="fa fa-circle-chevron-right fa-2xl" id="rightArrow"></i>
+          </span>
+          <div class="movie-wheel"></div>
+        </div>
+      </section>
+      <section class="movie-list top-rated">
+        <div>
+          <h2 class="movie-list-category">Top Rated</h2>
+        </div>
+        <div class="movie-wheel-wrapper">
+          <span class="arrow left">
+            <i class="fa fa-circle-chevron-left fa-2xl" id="leftArrow"></i>
+          </span>
+          <span class="arrow right">
+            <i class="fa fa-circle-chevron-right fa-2xl" id="rightArrow"></i>
+          </span>
+          <div class="movie-wheel"></div>
+        </div>
+      </section>
+      <section class="movie-list trending-week">
+        <div>
+          <h2 class="movie-list-category">Trending This Week</h2>
+        </div>
+        <div class="movie-wheel-wrapper">
+          <span class="arrow left">
+            <i class="fa fa-circle-chevron-left fa-2xl" id="leftArrow"></i>
+          </span>
+          <span class="arrow right">
+            <i class="fa fa-circle-chevron-right fa-2xl" id="rightArrow"></i>
+          </span>
+          <div class="movie-wheel"></div>
+        </div>
+      </section>
+    </main>
+    <script src="./tmdbAPIHandler.js" type="module"></script>
+    <script src="./script.js" type="module"></script>
+  </body>
+</html>

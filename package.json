@@ -1,0 +1,20 @@
+{
+  "name": "movie-database-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm-run-all --parallel watch-css start-server",
+    "watch-css": "node-sass scss/ -o css/ --watch",
+    "start-server": "live-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.1.0",
+    "node-sass": "^9.0.0",
+    "npm-run-all": "^4.1.5"
+  }
+}
