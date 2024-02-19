@@ -2,7 +2,7 @@ const options = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization: "YOUR_API_KEY"
+    Authorization: project.env.API_KEY
   },
 };
 
